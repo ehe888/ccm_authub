@@ -10,6 +10,12 @@
         "out_file"    : "out.log",
         "merge_logs"  : false,
         "watch"       : "../",
+        "env": {
+            "NODE_ENV": "production",
+            "AWESOME_SERVICE_API_TOKEN": "xxx",
+            "PORT": 6000,
+            "DEBUG": "*"
+        },
         "log_date_format"  : "YYYY-MM-DD HH:mm Z",
       }]
 }
