@@ -1,0 +1,15 @@
+/** processes.json for PM2 monitor to work properly
+ * ref: http://stackoverflow.com/questions/27882759/express-4-pm2-watch-not-working
+ */
+
+{
+      "apps" : [{
+        "name"        : "ccm-authub",
+        "script"      : "bin/www",
+        "error_file"  : "err.log",
+        "out_file"    : "out.log",
+        "merge_logs"  : false,
+        "watch"       : "../",
+        "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+      }]
+}
