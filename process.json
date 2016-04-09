@@ -4,7 +4,7 @@
 
 {
       "apps" : [{
-        "name"        : "ccm-authub",
+        "name"        : process.env.CCM_ACCOUNT_NAME,
         "script"      : "bin/www",
         "error_file"  : "err.log",
         "out_file"    : "out.log",
