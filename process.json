@@ -16,6 +16,11 @@
             "PORT": 6000,
             "DEBUG": "*"
         },
+	"env_production": {
+	     "PORT": 9999,
+	     "NODE_ENV": "production",
+             "DEBUG": "authub"
+	},
         "log_date_format"  : "YYYY-MM-DD HH:mm Z",
       }]
 }
