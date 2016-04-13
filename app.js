@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var authub = require("authub-core-module");
+var authub = require("aivics-authub-core-module");
 var cors = require('cors');
 var app = express();
 
@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
 
-app.use(function(req, res, next){  
+app.use(function(req, res, next){
   return next();
 });
 
