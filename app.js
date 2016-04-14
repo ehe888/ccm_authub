@@ -28,7 +28,7 @@ app.use(function(req, res, next){
 
 var identity = express();
 app.use("/identity", identity);
-authub(identity, { });
+authub(identity, { mongodb: { db: "authub_master" } });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
