@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var authub = require("aivics-authub-core-module");
+var env = process.env.NODE_ENV; /* development, test, production in different file */
+var config = require(path.join(__dirname, '.', 'config', 'config.' + env + '.json'));
 var cors = require('cors');
 var app = express();
 
@@ -28,7 +30,7 @@ app.use(function(req, res, next){
 
 var identity = express();
 app.use("/identity", identity);
-authub(identity, { mongodb: { db: "authub_master" } });
+authub(identity, config);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -37,14 +39,13 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handlers
-
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+if (process.env.NODE_ENV === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.json({
+      success: false,
       message: err.message,
       error: err
     });
@@ -55,7 +56,8 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
+  res.json({
+    success: false,
     message: err.message,
     error: {}
   });

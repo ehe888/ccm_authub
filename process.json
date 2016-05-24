@@ -3,24 +3,23 @@
  */
 
 {
-      "apps" : [{
-        "name"        : process.env.CCM_ACCOUNT_NAME,
-        "script"      : "bin/www",
-        "error_file"  : "err.log",
-        "out_file"    : "out.log",
-        "merge_logs"  : false,
-        "watch"       : "../",
-        "env": {
-            "NODE_ENV": "production",
-            "AWESOME_SERVICE_API_TOKEN": "xxx",
-            "PORT": 6000,
-            "DEBUG": "*"
-        },
-	"env_production": {
-	     "PORT": 9999,
-	     "NODE_ENV": "production",
-             "DEBUG": "authub"
-	},
-        "log_date_format"  : "YYYY-MM-DD HH:mm Z",
-      }]
+  "apps" : [{
+    "name"        : "ccm-authub",
+    "script"      : "bin/www",
+    "error_file"  : "err.log",
+    "out_file"    : "out.log",
+    "merge_logs"  : false,
+    "watch"       : "../",
+    "env": {
+        "NODE_ENV": "test",
+        "PORT": 6000,
+        "DEBUG": "*"
+    },
+  	"env_production": {
+  	     "PORT": 9999,
+  	     "NODE_ENV": "production",
+         "DEBUG": "authub"
+  	},
+    "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+  }]
 }
