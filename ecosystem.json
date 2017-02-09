@@ -1,38 +1,38 @@
 {
-  apps : [
+  "apps" : [
     {
-      name      : "ccm_authub",
-      script    : "./bin/www",
-      watch : false,
-      env: {
+      "name"      : "ccm_authub",
+      "script"    : "./bin/www",
+      "watch" : false,
+      "env": {
 
       },
-      env_production : {
-        NODE_ENV: "production",
-        PORT: 10241
+      "env_production" : {
+        "NODE_ENV": "production",
+        "PORT": 10241
       },
-      env_test : {
-        NODE_ENV: "test",
-        PORT: 6000
+      "env_test" : {
+        "NODE_ENV": "test",
+        "PORT": 6000
       }
     }
   ],
 
-  deploy : {
-    production : {
-      user : "root",
-      host : "npm.aivics.net",
-      ref  : "origin/master",
-      repo : "https://github.com/ehe888/ccm_authub.git",
-      path : "/srv/ccm_authub/production",
+  "deploy" : {
+    "production" : {
+      "user" : "root",
+      "host" : "npm.aivics.net",
+      "ref"  : "origin/master",
+      "repo" : "https://github.com/ehe888/ccm_authub.git",
+      "path" : "/srv/ccm_authub/production",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production"
     },
-    test : {
-      user : "root",
-      host : "npm.aivics.net",
-      ref  : "origin/master",
-      repo : "https://github.com/ehe888/ccm_authub.git",
-      path : "/srv/ccm_authub/test",
+    "test" : {
+      "user" : "root",
+      "host" : "npm.aivics.net",
+      "ref"  : "origin/master",
+      "repo" : "https://github.com/ehe888/ccm_authub.git",
+      "path" : "/srv/ccm_authub/test",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env test"
     }
   }
