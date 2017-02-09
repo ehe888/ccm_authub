@@ -6,8 +6,8 @@
   "apps" : [{
     "name"        : "ccm-authub",
     "script"      : "bin/www",
-    "error_file"  : "err.log",
-    "out_file"    : "out.log",
+    "error_file"  : "/var/log/ccmauth/err.log",
+    "out_file"    : "/var/log/ccmauth/out.log",
     "merge_logs"  : false,
     "watch"       : "../",
     "env": {
