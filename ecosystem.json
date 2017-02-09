@@ -29,7 +29,7 @@
     },
     "test" : {
       "user" : "root",
-      "host" : "npm.aivics.net",
+      "host" : "ccmauth.aivics.net",
       "ref"  : "origin/master",
       "repo" : "https://github.com/ehe888/ccm_authub.git",
       "path" : "/srv/ccm_authub/test",
