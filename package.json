@@ -2,7 +2,9 @@
   "name": "ccm_authub",
   "version": "0.0.2",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "start_dev": "NODE_ENV=development node ./bin/www",
+    "start_test": "NODE_ENV=test node ./bin/www"
   },
   "dependencies": {
     "aivics-authub-core-module": "0.0.33",
