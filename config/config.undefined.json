@@ -1,7 +1,0 @@
-{
-    "mongodb": {
-      "url": "mongodb://localhost/",
-      "masterDb": "authub_master",
-      "options": {}
-    }
-}
