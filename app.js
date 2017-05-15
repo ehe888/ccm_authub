@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var authub = require("aivics-authub-core-module");
 var env = process.env.NODE_ENV; /* development, test, production in different file */
-var config = require(path.join(__dirname, '.', 'config', 'config.' + env + '.json'));
+var config = require(path.join(__dirname, '.', 'config', 'config.' + (env || 'development') + '.json'));
 var cors = require('cors');
 var app = express();
 
