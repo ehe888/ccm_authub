@@ -4,7 +4,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "start_dev": "NODE_ENV=development node ./bin/www",
-    "start_test": "NODE_ENV=test node ./bin/www"
+    "start_test": "NODE_ENV=test node ./bin/www",
+    "pretest": "npm install",
+    "test": "mocha --require should --reporter spec --check-leaks --trace-warnings"
   },
   "dependencies": {
     "aivics-authub-core-module": "0.0.40",
@@ -20,6 +22,11 @@
     "shortid": "^2.2.6"
   },
   "devDependencies": {
-    "pm2": "^2.4.0"
+    "chai": "4.1.1",
+    "database-cleaner": "1.2.0",
+    "pm2": "^2.4.0",
+    "should": "11.2.1",
+    "supertest": "3.0.0",
+    "supertest-as-promised": "4.0.2"
   }
 }
