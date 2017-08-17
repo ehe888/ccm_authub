@@ -3,5 +3,18 @@
       "url": "mongodb://localhost/",
       "masterDb": "authub_master",
       "options": {}
+    },
+
+    "log": {
+      "level": "error"
+    },
+
+    "email": {
+      "port": 465,
+      "host": "smtp.mxhichina.com",
+      "secure": true,
+      "debug": false,
+      "user": "service@fastccm.com",
+      "pass": "Fastccm123"
     }
 }

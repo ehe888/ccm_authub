@@ -197,61 +197,61 @@ describe("Administrator", function(){
   })
 
 
-  describe('Double Activation', () => {
-    var veriCode;
-    var activationToken;
-
-
-    it("Step1. Get Verification Code", (done) => {
-      let data = {
-        identity: testAccount.email,
-        veri_type: 'email',
-        target_url: "/accounts/activate"
-      };
-      request(app)
-        .post('/identity/vericode/code')
-        .send( data )
-        .expect(201)
-        .then(function(res){
-          veriCode = res.body.veri_code;
-          expect(veriCode.length).to.gt(0);
-          done();
-        })
-        .catch(function(err){
-          done(err);
-        });
-    }).timeout(5000);
-
-    it('Step2. Exchange CODE for activation TOKEN', (done) => {
-      let data = {
-        identity: testAccount.email,
-        veri_code: veriCode
-      };
-      request(app)
-        .post('/identity/vericode/validate')
-        .send( data )
-        .expect(201)
-        .then((res) => {
-          activationToken = res.body.vericode_token;
-          console.log('activationToken: ', activationToken);
-          expect(activationToken).is.not.null;
-          done();
-        })
-        .catch((err) => {
-          done(err);
-        })
-    })
-
-    it("Step3. 成功激活Admin Account", (done) => {
-      request(app)
-        .get('/identity/accounts/activate')
-        .set('X-Authub-Account', testAccount.name)
-        .send({ vericode_token: activationToken })
-        .expect(200)
-        .end(function(err, res){
-          if(err) return done(err);
-          done();
-        });
-    });
-  })
+  // describe('Double Activation', () => {
+  //   var veriCode;
+  //   var activationToken;
+  //
+  //
+  //   it("Step1. Get Verification Code", (done) => {
+  //     let data = {
+  //       identity: testAccount.email,
+  //       veri_type: 'email',
+  //       target_url: "/accounts/activate"
+  //     };
+  //     request(app)
+  //       .post('/identity/vericode/code')
+  //       .send( data )
+  //       .expect(201)
+  //       .then(function(res){
+  //         veriCode = res.body.veri_code;
+  //         expect(veriCode.length).to.gt(0);
+  //         done();
+  //       })
+  //       .catch(function(err){
+  //         done(err);
+  //       });
+  //   }).timeout(5000);
+  //
+  //   it('Step2. Exchange CODE for activation TOKEN', (done) => {
+  //     let data = {
+  //       identity: testAccount.email,
+  //       veri_code: veriCode
+  //     };
+  //     request(app)
+  //       .post('/identity/vericode/validate')
+  //       .send( data )
+  //       .expect(201)
+  //       .then((res) => {
+  //         activationToken = res.body.vericode_token;
+  //         console.log('activationToken: ', activationToken);
+  //         expect(activationToken).is.not.null;
+  //         done();
+  //       })
+  //       .catch((err) => {
+  //         done(err);
+  //       })
+  //   })
+  //
+  //   it("Step3. 成功激活Admin Account", (done) => {
+  //     request(app)
+  //       .get('/identity/accounts/activate')
+  //       .set('X-Authub-Account', testAccount.name)
+  //       .send({ vericode_token: activationToken })
+  //       .expect(200)
+  //       .end(function(err, res){
+  //         if(err) return done(err);
+  //         done();
+  //       });
+  //   });
+  // })
 })

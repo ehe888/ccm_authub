@@ -163,4 +163,57 @@ describe('User', () => {
         })
     })
   })
+
+  describe('Forgot Password', () => {
+    it('Request to change password', (done) => {
+      return request(app)
+        .get('/identity/users/forgot_password')
+        .set('X-Authub-Account', masterAccount.name)
+        .query({ email: testUser1.email })
+        .expect(200)
+        .then( res => {
+          done();
+        })
+        .catch( err => {
+          console.log(err);
+          done(err);
+        })
+    }).timeout(5000);
+
+    it('Change password with forgot password token', (done) => {
+      dbs.connectToMaster((err, db) => {
+        db.model('ForgotPasswordRequest')
+          .findOne({ identity: testUser1.email, used: false })
+          .sort({ createdAt: 'desc'})
+          .then( forgotPasswordRequest => {
+            return request(app)
+              .post('/identity/users/forgot_password')
+              .set('X-Authub-Account', masterAccount.name)
+              .send({
+                email: forgotPasswordRequest.identity,
+                token: forgotPasswordRequest.token,
+                password: 'Abc789'
+              })
+              .expect(200)
+          })
+          .then( res => {
+            return request(app)
+              .post('/identity/oauth2/token')
+              .set('X-Authub-Account', masterAccount.name)
+              .send({
+                  username: testUser1.username,
+                  password: 'Abc789',
+                  grant_type: 'password'
+              })
+              .expect(200)
+          })
+          .then( res => {
+            done();
+          })
+          .catch( err => {
+            done(err)
+          })
+      })
+    })
+  })
 })
