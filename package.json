@@ -17,6 +17,7 @@
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
+    "nconf": "0.8.4",
     "randomstring": "^1.1.5",
     "serve-favicon": "~2.3.0",
     "shortid": "^2.2.6",

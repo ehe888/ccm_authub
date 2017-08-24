@@ -17,5 +17,28 @@
       "user": "service@aivics.net",
       "pass": "001@Helei",
       "from": "service@aivics.net"
-    }
+    },
+
+    "activation": {
+      "template": "您激活账号的验证码是：${veri_code}。请不要把验证码泄露给任何人。"
+    },
+
+    "message": {
+      "authorizeUser": "${account}邀请您加入团队，<a href='http://${account}.console.aivics.cn'>登录系统</a>开始使用",
+      "registerUser": "您的FASTCCM账号创建成功，请点击链接<a href='http://member.aivics.cn/activate?token=${token}'>激活账号</a>, 激活码为：${code}" },
+
+    "jwt": {
+      "accessToken": {
+        "secret": "GfmtE4Z2UPllEsbo69PzCAOcyjAZKhFg",
+        "expiresIn": 7200,
+        "algorithm": "HS256"
+      },
+      "refreshToken": {
+        "secret": "3JUy1fIqMJE6WO4MO4VmFRT2mYhHovRDdTAreSqOGhiArP0k8FBBLHMPDsjNdHo0",
+        "expiresIn": 2592000,
+        "algorithm": "HS256"
+      }
+    },
+
+    "superuser": [ "lei.he@fastccm.com", "xunjie.wu@fastccm.com", "daniel.wu@fastccm.com"]
 }

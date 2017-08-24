@@ -16,5 +16,9 @@
       "debug": false,
       "user": "service@fastccm.com",
       "pass": "Fastccm123"
+    },
+
+    "activation": {
+      "template": "您激活账号的验证码是：${veri_code}。请不要把验证码泄露给任何人。"
     }
 }
