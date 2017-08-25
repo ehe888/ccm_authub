@@ -15,6 +15,7 @@
       "secure": true,
       "debug": false,
       "user": "service@fastccm.com",
-      "pass": "Fastccm123"
+      "pass": "Fastccm123",
+      "from": "service@fastccm.com",
     }
 }
