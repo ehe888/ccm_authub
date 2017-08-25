@@ -16,6 +16,6 @@
       "debug": false,
       "user": "service@fastccm.com",
       "pass": "Fastccm123",
-      "from": "service@fastccm.com",
+      "from": "service@fastccm.com"
     }
 }
