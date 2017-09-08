@@ -31,6 +31,9 @@ app.use(function(req, res, next){
 
 var identity = express();
 app.use("/identity", identity);
+
+logger.debug("===>", config);
+
 authub(identity, config);
 
 // catch 404 and forward to error handler
