@@ -4,8 +4,8 @@
       "name"      : "ccmauth.fastccm.net",
       "script"    : "./bin/www",
       "watch" : false,
-      "error_file"      : "/var/log/pm2/ccm_auth/err.log",
-      "out_file"        : "/var/log/pm2/ccm_auth/out.log",
+      "error_file"      : "/var/log/pm2/ccm_auth/1.0/err.log",
+      "out_file"        : "/var/log/pm2/ccm_auth/1.0/out.log",
       "merge_logs"      : true,
       "log_date_format" : "YYYY-MM-DD HH:mm Z",
       "env": {
