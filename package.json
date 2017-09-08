@@ -1,5 +1,5 @@
 {
-  "name": "ccmauth.fastccm.net",
+  "name": "ccm_authub",
   "version": "0.0.4",
   "scripts": {
     "start": "node ./bin/www",
