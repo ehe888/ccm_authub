@@ -53,7 +53,7 @@ exports.masterClient = {
 exports.testAccount = {
     name: "aivics",
     fullname: "猎户座网络科技有限公司",
-    username: 'aivics_admin',
+    username: 'lei.he@aivics.com',
     password: 'abc123456',
     mobile: '18621661799',
     email: 'lei.he@aivics.com',

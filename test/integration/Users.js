@@ -6,7 +6,7 @@ const expect  = require('chai').expect;
 const { app, masterAccount, masterClient, testAccount, dbs } = require('./env');
 
 const testUser1 = {
-  username: 'ehe8888',
+  username: 'lei.he@aivics.com',
   password: '123456',
   mobile: '13764211365',
   email: 'lei.he@aivics.com',
