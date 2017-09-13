@@ -1,7 +1,7 @@
 {
   "apps" : [
     {
-      "name"      : "ccmauth.fastccm.net",
+      "name"      : "ccm_authub",
       "script"    : "./bin/www",
       "watch" : false,
       "error_file"      : "/var/log/pm2/ccm_auth/1.0/err.log",
