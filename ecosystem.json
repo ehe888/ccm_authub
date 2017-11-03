@@ -1,7 +1,7 @@
 {
   "apps" : [
     {
-      "name"      : "ccmauth.fastccm.net",
+      "name"      : "ccmauth" + "-" + process.env.NODE_ENV,
       "script"    : "./bin/www",
       "watch" : false,
       "error_file"      : "/var/log/pm2/ccm_auth/1.0/err.log",
@@ -11,7 +11,6 @@
       "env": {
 
       },
-      "append_env_to_name": true,
       "env_production" : {
         "NODE_ENV": "production",
         "PORT": 10241
