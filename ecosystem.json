@@ -11,6 +11,7 @@
       "env": {
 
       },
+      "append_env_to_name": true,
       "env_production" : {
         "NODE_ENV": "production",
         "PORT": 10241
