@@ -2,7 +2,7 @@
 
 const SUFFIX = process.argv.indexOf('--env') === -1 ? '' :
       '-' + process.argv[process.argv.indexOf('--env') + 1];
-module.export = {
+module.exports = {
   "apps" : [
     {
       "name"      : "ccmauth" + SUFFIX,
