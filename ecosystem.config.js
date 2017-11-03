@@ -37,7 +37,7 @@ module.export = {
       "ref"  : "origin/1.0",
       "repo" : "https://github.com/ehe888/ccm_authub.git",
       "path" : "/srv/ccm_authub/production",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production"
+      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
     },
     "staging" : {
       "user" : "root",
@@ -45,7 +45,7 @@ module.export = {
       "ref"  : "origin/master",
       "repo" : "https://github.com/ehe888/ccm_authub.git",
       "path" : "/srv/ccm_authub/staging",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env staging"
+      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env staging"
     },
     "test" : {
       "user" : "root",
@@ -53,7 +53,7 @@ module.export = {
       "ref"  : "origin/master",
       "repo" : "https://github.com/ehe888/ccm_authub.git",
       "path" : "/srv/ccm_authub/test",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env test"
+      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env test"
     }
   }
 }
