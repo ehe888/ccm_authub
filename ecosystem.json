@@ -15,6 +15,10 @@
         "NODE_ENV": "production",
         "PORT": 10241
       },
+      "env_staging" : {
+        "NODE_ENV": "staging",
+        "PORT": 10242
+      },
       "env_test" : {
         "NODE_ENV": "test",
         "PORT": 6000
@@ -30,6 +34,14 @@
       "repo" : "https://github.com/ehe888/ccm_authub.git",
       "path" : "/srv/ccm_authub/production",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production"
+    },
+    "staging" : {
+      "user" : "root",
+      "host" : "ccmauth.fastccm.com",
+      "ref"  : "origin/master",
+      "repo" : "https://github.com/ehe888/ccm_authub.git",
+      "path" : "/srv/ccm_authub/staging",
+      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env staging"
     },
     "test" : {
       "user" : "root",
