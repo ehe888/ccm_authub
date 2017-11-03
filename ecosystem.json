@@ -37,7 +37,7 @@
     },
     "staging" : {
       "user" : "root",
-      "host" : "ccmauth.fastccm.com",
+      "host" : "ccmauth.fastccm.net",
       "ref"  : "origin/master",
       "repo" : "https://github.com/ehe888/ccm_authub.git",
       "path" : "/srv/ccm_authub/staging",
