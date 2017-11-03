@@ -1,4 +1,35 @@
-{
+// ecosystem.config.js
+
+const SUFFIX = process.argv.indexOf('--env') === -1 ? '' :
+      '-' + process.argv[process.argv.indexOf('--env') + 1];
+module.exports = {
+  "apps" : [
+    {
+      "name"      : "ccmauth" + SUFFIX,
+      "script"    : "./bin/www",
+      "watch" : false,
+      "error_file"      : "/var/log/pm2/ccm_auth/1.0/err.log",
+      "out_file"        : "/var/log/pm2/ccm_auth/1.0/out.log",
+      "merge_logs"      : true,
+      "log_date_format" : "YYYY-MM-DD HH:mm Z",
+      "env": {
+
+      },
+      "env_production" : {
+        "NODE_ENV": "production",
+        "PORT": 10241
+      },
+      "env_staging" : {
+        "NODE_ENV": "staging",
+        "PORT": 10242
+      },
+      "env_test" : {
+        "NODE_ENV": "test",
+        "PORT": 6000
+      }
+    }
+  ],
+
   "deploy" : {
     "production" : {
       "user" : "root",
