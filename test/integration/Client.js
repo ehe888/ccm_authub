@@ -96,7 +96,6 @@ describe("Client", function(){
   it("成功激活Admin Account", (done) => {
     request(app)
       .get('/identity/accounts/activate')
-      .set('X-Authub-Account', accountName)
       .send({ vericode_token: vericode_token })
       .expect(200)
       .end(function(err, res){
@@ -110,7 +109,7 @@ describe("Client", function(){
       .post('/identity/oauth2admin/token')
       .set('X-Authub-Account', "aivics")
       .send({
-          username: 'aivics_admin',
+          username: 'lei.he@aivics.com',
           password: 'abc123456',
           grant_type: 'password'
       })
